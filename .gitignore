@@ -1,0 +1,15 @@
+# Hugo build output
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Hugo & Go module caches
+/.hugo_cache/
+
+# direnv / local env
+.envrc
+.venv/
+
+# OS / editor cruft
+.DS_Store
+*~

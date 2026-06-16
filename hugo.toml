@@ -1,0 +1,69 @@
+baseURL = 'https://ademar.org/'
+locale = 'en-us'
+title = 'Ademar Reis'
+theme = 'PaperMod'
+
+# PaperMod wants these enabled for full functionality
+enableRobotsTXT = true
+enableInlineShortcodes = true
+
+[params]
+  description = 'Director of Software Engineering at Red Hat, leading Azure Red Hat OpenShift (ARO).'
+  author = 'Ademar Reis'
+  defaultTheme = 'auto'        # respects the visitor's light/dark OS setting
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowCodeCopyButtons = true
+  ShowToc = true               # table of contents — useful for long-form essays
+
+  # "profile" landing mode = centered headshot + bio + buttons,
+  # i.e. a faithful rebuild of the original ademar.org home page.
+  [params.profileMode]
+    enabled = true
+    title = 'Ademar Reis'
+    subtitle = "Director of Software Engineering at Red Hat. Leading Azure Red Hat OpenShift (ARO). 20+ years building and leading teams in Linux, cloud infrastructure, and open source."
+    imageUrl = '/img/headshot-web.jpg'
+    imageTitle = 'Ademar Reis'
+    imageWidth = 160
+    imageHeight = 160
+
+    [[params.profileMode.buttons]]
+      name = 'Email'
+      url = 'mailto:ademar@ademar.org'
+    [[params.profileMode.buttons]]
+      name = 'LinkedIn'
+      url = 'https://www.linkedin.com/in/ademarreis/'
+    [[params.profileMode.buttons]]
+      name = 'GitHub'
+      url = 'https://github.com/adereis'
+
+  # Social icons shown in the header/footer
+  [[params.socialIcons]]
+    name = 'email'
+    url = 'mailto:ademar@ademar.org'
+  [[params.socialIcons]]
+    name = 'linkedin'
+    url = 'https://www.linkedin.com/in/ademarreis/'
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/adereis'
+
+# Top navigation menu
+[menu]
+  [[menu.main]]
+    identifier = 'posts'
+    name = 'Posts'
+    url = '/posts/'
+    weight = 10
+  [[menu.main]]
+    identifier = 'about'
+    name = 'About'
+    url = '/about/'
+    weight = 20
+
+# Syntax highlighting / Markdown rendering
+[markup]
+  [markup.highlight]
+    noClasses = false          # use CSS classes so theme dark/light works
+  [markup.goldmark.renderer]
+    unsafe = true              # allow raw HTML in Markdown when needed
