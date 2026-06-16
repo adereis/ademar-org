@@ -48,18 +48,17 @@ enableInlineShortcodes = true
     name = 'github'
     url = 'https://github.com/adereis'
 
-# Top navigation menu
-[menu]
-  [[menu.main]]
-    identifier = 'posts'
-    name = 'Posts'
-    url = '/posts/'
-    weight = 10
-  [[menu.main]]
-    identifier = 'about'
-    name = 'About'
-    url = '/about/'
-    weight = 20
+# Top navigation menu — intentionally empty for now: the home page is the
+# minimal profile (matching the original site, which had no nav). Re-add
+# entries here once /posts has a published post and /about is finalized:
+#   [[menu.main]]
+#     name = 'Posts'
+#     url = '/posts/'
+#     weight = 10
+#   [[menu.main]]
+#     name = 'About'
+#     url = '/about/'
+#     weight = 20
 
 # Syntax highlighting / Markdown rendering
 [markup]
