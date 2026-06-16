@@ -1,0 +1,66 @@
+XBitHack on
+RemoveHandler .py
+DirectoryIndex index.html
+AddDefaultCharset utf-8
+
+<IfModule mod_deflate.c>
+# Insert filters
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-httpd-php
+AddOutputFilterByType DEFLATE application/x-httpd-fastphp
+AddOutputFilterByType DEFLATE image/svg+xml
+
+# Drop problematic browsers
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+
+# Make sure proxies don't deliver the wrong content
+Header append Vary User-Agent env=!dont-vary
+</IfModule>
+
+RewriteEngine On
+RewriteRule ^include(/|/.+)?$ - [R=404,L]
+RewriteRule ^\.git(/|/.+)?$ - [R=404,L]
+RewriteRule ^fotos/mpp-templates(/|/.+)?$ - [R=404,L]
+RewriteRule ^fotos/.*/exif.cache$ - [R=404,L]
+
+# 2015-04: due to original broken links
+Redirect 301 /contato.html https://www.ademar.org/index.html
+Redirect 301 /old.xml.gz https://www.ademar.org/sitemap.xml.gz
+
+# from awstats and google-webmaster 404 reports
+Redirect 301 /linux https://www.ademar.org
+Redirect 301 /linux%20 https://www.ademar.org
+Redirect 301 /%20 https://www.ademar.org
+Redirect 301 /index-en.html https://www.ademar.org
+
+# moved to https, 2017-08-03
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# M is 'since modified'
+# 7776000 is 3 months
+# 15552000 is 6 months
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html M7776000
+    ExpiresByType text/css M7776000
+    ExpiresByType application/javascript M15552000
+    ExpiresByType image/bmp M15552000
+    ExpiresByType image/gif M15552000
+    ExpiresByType image/x-icon M15552000
+    ExpiresByType image/jpeg M15552000
+    ExpiresByType image/png M15552000
+</IfModule>
+
+# vim:tw=0:
