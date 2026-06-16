@@ -20,13 +20,6 @@ This site is a static site built with [Hugo](https://gohugo.io/), kept under
 version control in git, and served behind a CDN. The source is intentionally
 small and dependency-light.
 
-## On authorship
+<!-- Further sections to be written by Ademar. -->
 
-<!--
-  TODO (Ademar to write): the meta-story for the framework — the
-  human-directed, AI-articulated authorship model — and a link back to the
-  framework / provenance repository. Left blank here on purpose so the
-  framing is in your words, not mine.
--->
-
-_(Section to be written.)_
+_(More coming.)_
