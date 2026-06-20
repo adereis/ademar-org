@@ -1,6 +1,6 @@
 +++
 date = '2026-06-16T10:43:53-04:00'
-draft = true
+draft = false
 title = 'About'
 +++
 
@@ -22,15 +22,22 @@ autonomy. Some of that conviction has turned into open-source
 [tools for engineering management](https://github.com/adereis), because I think
 management problems deserve the same rigor we bring to technical ones.
 
+Lately a lot of my energy goes into AI as a practical force in engineering —
+championing its adoption on my teams, building agents and tooling for SRE and
+software development, and writing more of my own software than I have in years,
+because the tools finally make it possible. I think this genuinely changes what
+engineering and engineering leadership look like, and I'd rather help shape that
+shift than watch it happen.
+
 I'm originally from Brazil and was the first in my family to go to college. I
 moved to the United States in 2018, and I live near Boston with my wife and
 daughter.
 
-Outside of work, I have a long-standing personal interest in AI — not only as a
-tool, but as a subject worth thinking carefully about: what it tells us about
-minds, intelligence, and the questions philosophers have argued over for
-centuries. I approach all of it from a scientific, secular, humanist point of
-view. There's more to say here soon.
+That practical enthusiasm has a quieter, older companion: a long-standing
+personal interest in AI as a *subject* rather than a tool — what it can tell us
+about minds, intelligence, and questions people have argued over for centuries.
+I come at all of it from a scientific, secular, humanist point of view. There's
+more to say here soon.
 
 ## Colophon
 

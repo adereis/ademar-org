@@ -8,7 +8,7 @@ enableRobotsTXT = true
 enableInlineShortcodes = true
 
 [params]
-  description = 'Director of Software Engineering at Red Hat, leading Azure Red Hat OpenShift (ARO).'
+  description = 'Director of Software Engineering at Red Hat, leading Azure Red Hat OpenShift. Twenty-five years on Linux, cloud infrastructure, and open source.'
   author = 'Ademar Reis'
   defaultTheme = 'auto'        # respects the visitor's light/dark OS setting
   ShowReadingTime = true
@@ -21,7 +21,7 @@ enableInlineShortcodes = true
   [params.profileMode]
     enabled = true
     title = 'Ademar Reis'
-    subtitle = "Director of Software Engineering at Red Hat. Leading Azure Red Hat OpenShift (ARO). 20+ years building and leading teams in Linux, cloud infrastructure, and open source."
+    subtitle = "Director of Software Engineering at Red Hat, leading Azure Red Hat OpenShift. Twenty-five years on Linux — from desktop distributions to managed Kubernetes in the cloud."
     imageUrl = '/img/headshot-web.jpg'
     imageTitle = 'Ademar Reis'
     imageWidth = 160
@@ -48,17 +48,17 @@ enableInlineShortcodes = true
     name = 'github'
     url = 'https://github.com/adereis'
 
-# Top navigation menu — intentionally empty for now: the home page is the
-# minimal profile (matching the original site, which had no nav). Re-add
-# entries here once /posts has a published post and /about is finalized:
+# Top navigation menu. About is live; Posts stays commented out until there's
+# a published post (an empty /posts list reads as unfinished). Re-add Posts
+# here when the first real post lands:
 #   [[menu.main]]
 #     name = 'Posts'
 #     url = '/posts/'
 #     weight = 10
-#   [[menu.main]]
-#     name = 'About'
-#     url = '/about/'
-#     weight = 20
+[[menu.main]]
+  name = 'About'
+  url = '/about/'
+  weight = 20
 
 # Syntax highlighting / Markdown rendering
 [markup]
