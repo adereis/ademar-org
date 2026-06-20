@@ -4,7 +4,7 @@ draft = false
 title = 'About'
 +++
 
-I'm Ademar Reis — Director of Software Engineering at Red Hat, leading
+I'm Ademar Reis, Director of Software Engineering at Red Hat, leading
 [Azure Red Hat OpenShift (ARO)](https://azure.microsoft.com/en-us/products/openshift),
 a first-party Azure service co-developed and co-operated with Microsoft.
 
@@ -16,13 +16,13 @@ and now to managed Kubernetes running in the cloud. Different layers, same
 substrate.
 
 Along the way I went from writing code to leading the people who write it. I
-build and lead distributed teams — often across many countries and time zones —
+build and lead distributed teams, often across many countries and time zones,
 and I care a lot about doing that well: empathetic, direct, and biased toward
 autonomy. Some of that conviction has turned into open-source
 [tools for engineering management](https://github.com/adereis), because I think
 management problems deserve the same rigor we bring to technical ones.
 
-Lately a lot of my energy goes into AI as a practical force in engineering —
+Lately a lot of my energy goes into AI as a practical force in engineering:
 championing its adoption on my teams, building agents and tooling for SRE and
 software development, and writing more of my own software than I have in years,
 because the tools finally make it possible. I think this genuinely changes what
@@ -34,7 +34,7 @@ moved to the United States in 2018, and I live near Boston with my wife and
 daughter.
 
 That practical enthusiasm has a quieter, older companion: a long-standing
-personal interest in AI as a *subject* rather than a tool — what it can tell us
+personal interest in AI as a *subject* rather than a tool: what it can tell us
 about minds, intelligence, and questions people have argued over for centuries.
 I come at all of it from a scientific, secular, humanist point of view. There's
 more to say here soon.
@@ -43,7 +43,7 @@ more to say here soon.
 
 This site is built with [Hugo](https://gohugo.io/), kept under version control
 in git, and served behind a CDN. The source is intentionally small and
-dependency-light — no JavaScript framework, no build pipeline beyond a single
+dependency-light: no JavaScript framework, no build pipeline beyond a single
 static-site generator.
 
 ## Elsewhere

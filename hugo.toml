@@ -14,11 +14,11 @@ enableInlineShortcodes = true
   ShowReadingTime = true
   ShowShareButtons = false
   ShowCodeCopyButtons = true
-  ShowToc = true               # table of contents — useful for long-form essays
+  ShowToc = true               # table of contents, useful for long-form essays
 
   # Site-wide footer disclaimer. Renders on every page (home, About, posts)
-  # right before the "Powered by Hugo" line, via PaperMod's footer.text hook —
-  # no template override needed.
+  # right before the "Powered by Hugo" line, via PaperMod's footer.text hook.
+  # No template override needed.
   [params.footer]
     text = "Opinions here are my own and do not represent my employer."
 
@@ -27,7 +27,7 @@ enableInlineShortcodes = true
   [params.profileMode]
     enabled = true
     title = 'Ademar Reis'
-    subtitle = "Director of Software Engineering at Red Hat, leading Azure Red Hat OpenShift. Twenty-five years on Linux — from desktop distributions to managed Kubernetes in the cloud."
+    subtitle = "Director of Software Engineering at Red Hat, leading Azure Red Hat OpenShift. Twenty-five years on Linux, from desktop distributions to managed Kubernetes in the cloud."
     imageUrl = '/img/headshot-web.jpg'
     imageTitle = 'Ademar Reis'
     imageWidth = 160
