@@ -16,6 +16,12 @@ enableInlineShortcodes = true
   ShowCodeCopyButtons = true
   ShowToc = true               # table of contents — useful for long-form essays
 
+  # Site-wide footer disclaimer. Renders on every page (home, About, posts)
+  # right before the "Powered by Hugo" line, via PaperMod's footer.text hook —
+  # no template override needed.
+  [params.footer]
+    text = "Opinions here are my own and do not represent my employer."
+
   # "profile" landing mode = centered headshot + bio + buttons,
   # i.e. a faithful rebuild of the original ademar.org home page.
   [params.profileMode]
