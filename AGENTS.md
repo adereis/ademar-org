@@ -25,7 +25,7 @@ are not part of this one.
 hugo.toml                 site config; baseURL is the apex https://ademar.org/
 content/                  Markdown (posts/, about.md); new content is draft by default
 layouts/                  LOCAL OVERRIDES of theme templates (see below)
-static/                   copied verbatim to site root (headshot, .htaccess, misc/, CNAME)
+static/                   copied verbatim to site root (headshot, misc/, CNAME)
 themes/PaperMod/          theme submodule (do not edit in place)
 .github/workflows/hugo.yml    deploy (GitHub Pages)
 ```
@@ -54,9 +54,10 @@ production builds (no `-D`). Publishing is a one-character change, so unfinished
 prose can live in the repo without going live.
 
 ### Static dotfiles
-Hugo copies `static/` verbatim, including dotfiles. `static/.htaccess` (Apache
-rules for the DreamHost phase) and `static/CNAME` (GitHub Pages custom domain)
-ride along this way.
+Hugo copies `static/` verbatim, including dotfiles. `static/CNAME` (GitHub Pages
+custom domain) rides along this way. (A `static/.htaccess` from the DreamHost
+phase used to live here too; it was removed as inert on GitHub Pages, which
+serves via a CDN and never reads Apache config.)
 
 ## Deploy architecture
 
