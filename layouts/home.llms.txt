@@ -1,0 +1,26 @@
+{{- /*
+  Generates /llms.txt -- a curated, LLM-friendly index of the site.
+  Format follows https://llmstxt.org : H1 title, blockquote summary,
+  optional prose, then H2 sections listing links as "- [title](url): notes".
+*/ -}}
+# {{ site.Title }}
+{{ with site.Params.description }}
+> {{ . }}
+{{ end }}
+{{- with site.Home.RawContent }}
+{{ . | plainify | chomp }}
+{{ end }}
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- with $posts }}
+## Posts
+{{ range . }}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ else }}{{ with .Summary }}: {{ . | plainify | htmlUnescape | chomp }}{{ end }}{{ end }}
+{{- end }}
+{{ end }}
+{{- $pages := where site.RegularPages "Section" "ne" "posts" -}}
+{{- with $pages }}
+## Pages
+{{ range . }}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ else }}{{ with .Summary }}: {{ . | plainify | htmlUnescape | chomp }}{{ end }}{{ end }}
+{{- end }}
+{{ end }}

@@ -1,0 +1,33 @@
+{{- /*
+  Generates /llms-full.txt -- the full Markdown body of every page on the
+  site, concatenated, so an LLM can ingest the entire site in one fetch.
+  Uses .RawContent (the original Markdown, front matter stripped).
+*/ -}}
+# {{ site.Title }}
+{{ with site.Params.description }}
+> {{ . }}
+{{ end }}
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- $pages := where site.RegularPages "Section" "ne" "posts" -}}
+{{- range $pages.ByTitle }}
+---
+
+# {{ .Title }}
+
+Source: {{ .Permalink }}
+{{ with .Date }}{{ if not .IsZero }}
+Published: {{ .Format "2006-01-02" }}
+{{ end }}{{ end }}
+{{ .RawContent }}
+{{ end }}
+{{- range $posts.ByDate.Reverse }}
+---
+
+# {{ .Title }}
+
+Source: {{ .Permalink }}
+{{ with .Date }}{{ if not .IsZero }}
+Published: {{ .Format "2006-01-02" }}
+{{ end }}{{ end }}
+{{ .RawContent }}
+{{ end }}

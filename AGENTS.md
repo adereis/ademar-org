@@ -34,12 +34,34 @@ themes/PaperMod/          theme submodule (do not edit in place)
 
 ### Theme overrides instead of editing the submodule
 Files under `layouts/` shadow the theme's templates at the same path. We use
-this to patch, *without* dirtying the submodule:
-`layouts/baseof.html`, `layouts/rss.xml`,
-`layouts/_partials/templates/opengraph.html` replace Hugo v0.158 deprecated
-`.Language.{LanguageDirection,LanguageCode}` calls. Each carries a `{{/* … */}}`
-comment marking it a temporary shim — **delete these overrides once PaperMod
-fixes the deprecations upstream**, then `git submodule update --remote`.
+this to patch, *without* dirtying the submodule. Two kinds:
+
+- **Temporary deprecation shims** — `layouts/baseof.html`, `layouts/rss.xml`,
+  `layouts/_partials/templates/opengraph.html` replace Hugo v0.158 deprecated
+  `.Language.{LanguageDirection,LanguageCode}` calls. Each carries a `{{/* … */}}`
+  comment marking it a shim — **delete these once PaperMod fixes the
+  deprecations upstream**, then `git submodule update --remote`.
+- **Functional additions** (keep) — `layouts/robots.txt` (explicitly welcomes
+  AI crawlers, see below) and `layouts/home.llms.txt` / `layouts/home.llms-full.txt`
+  (render the `llms` / `llms-full` custom output formats).
+
+### AI / LLM crawlability
+Deliberate choices so the site is easy for AI crawlers to consume — see the
+commented `[outputFormats]`, `[outputs]`, and `[params.schema]` blocks in
+`hugo.toml`:
+
+- **`/llms.txt` + `/llms-full.txt`** — the [llmstxt.org](https://llmstxt.org)
+  convention: a curated Markdown index and a full-content dump, generated as
+  custom output formats from existing content (templates noted above). Declared
+  with `rel = "alternate"`, so the theme auto-emits `<link>` discovery hints.
+- **Full-text RSS** — `ShowFullTextinRSS = true` makes feed items carry the
+  whole post body (`<content:encoded>`), not just a summary.
+- **JSON-LD** — `[params.schema] publisherType = "Person"` (this is a personal
+  site, not an Organization), with `sameAs` profile links for entity resolution.
+  PaperMod's `schema_json.html` reads these.
+- **robots.txt** — `layouts/robots.txt` allows everything and additionally names
+  the major AI/LLM crawlers as welcome (declarative; the wildcard already permits
+  them). Keeps PaperMod's non-production `Disallow: /` gating.
 
 ### Never change `baseURL` to fix a preview
 `baseURL = "https://ademar.org/"` emits root-absolute asset paths. The

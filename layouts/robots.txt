@@ -1,0 +1,33 @@
+{{- /*
+  Local override of PaperMod's robots.txt template.
+  Keeps the original production gating (block everything on non-production
+  builds so previews never get indexed) but, in production, explicitly
+  welcomes the major AI / LLM crawlers. The wildcard rule already permits
+  them; the named blocks are declarative intent and survive any future
+  tightening of "User-agent: *".
+*/ -}}
+{{- if hugo.IsProduction | or (eq site.Params.env "production") -}}
+User-agent: *
+Disallow:
+
+# AI / LLM crawlers -- explicitly welcome.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: PerplexityBot
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Amazonbot
+User-agent: Bytespider
+User-agent: Meta-ExternalAgent
+Disallow:
+
+Sitemap: {{ "sitemap.xml" | absURL }}
+{{- else -}}
+User-agent: *
+Disallow: /
+{{- end -}}
